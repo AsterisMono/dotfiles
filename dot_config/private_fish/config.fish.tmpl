@@ -1,0 +1,22 @@
+set fish_greeting
+
+starship init fish | source
+zoxide init fish | source
+
+fish_add_path ~/.local/bin
+fish_add_path /opt/nvim-linux-x86_64/bin
+
+alias n='nvim'
+alias gg='lazygit'
+alias cl='claude'
+
+function clg
+    set -lx ANTHROPIC_BASE_URL https://amber.requiem.garden
+    set -lx ANTHROPIC_AUTH_TOKEN {{ onepasswordRead "op://Personal/Amber.AnthropicToken/credential" | quote }}
+    set -lx ANTHROPIC_DEFAULT_OPUS_MODEL gpt-5.4
+    set -lx ANTHROPIC_DEFAULT_SONNET_MODEL gpt-5.4
+    set -lx ANTHROPIC_DEFAULT_HAIKU_MODEL gpt-5.4-mini
+    claude $argv
+end
+
+set -x SSH_AUTH_SOCK "~/.1password/agent.sock"

@@ -144,6 +144,54 @@ chezmoi init --apply https://github.com/USERNAME/dotfiles
 **Ignore files:**
 Add patterns to `.chezmoiignore` in the source root (gitignore syntax).
 
+## 1Password Integration
+
+chezmoi integrates with 1Password via the `op` CLI to pull secrets into templates.
+
+### Setup
+
+```bash
+op account add --address $SUBDOMAIN.1password.com --email $EMAIL
+eval $(op signin --account $SUBDOMAIN)
+```
+
+Biometric authentication eliminates manual sign-in. By default chezmoi verifies session tokens and prompts if expired. To error instead of prompting, set `onepassword.prompt = false` in `chezmoi.toml`.
+
+### Template Functions
+
+| Function | Purpose | Example |
+|----------|---------|---------|
+| `onepasswordRead` | `op read $URL` — simplest, use Secret References | `{{ onepasswordRead "op://vault/item/field" }}` |
+| `onepassword` | Full item as JSON | `{{ (index (onepassword "$UUID").fields 1).value }}` |
+| `onepasswordDetailsFields` | Fields indexed by label — easier than `onepassword` | `{{ (onepasswordDetailsFields "$UUID").password.value }}` |
+| `onepasswordItemFields` | Additional/custom item fields | `{{ (onepasswordItemFields "$UUID").myfield.value }}` |
+| `onepasswordDocument` | Retrieve a document by UUID | `{{- onepasswordDocument "$UUID" -}}` |
+
+**Prefer `onepasswordRead` with Secret References** (`op://vault/item/field`) — they're stable, readable, and work across vaults.
+
+**Debug:** `chezmoi execute-template '{{ onepasswordItemFields "$UUID" | toJson }}'`
+
+### Operational Modes (`chezmoi.toml`)
+
+```toml
+[onepassword]
+  mode = "account"   # default — full desktop app integration
+  # mode = "connect"   # requires OP_CONNECT_HOST + OP_CONNECT_TOKEN
+  # mode = "service"   # requires OP_SERVICE_ACCOUNT_TOKEN
+```
+
+- **account** (default): Full 1Password CLI with desktop app. Errors if service account env vars are set.
+- **connect**: 1Password Connect server. No `onepasswordDocument`, single account only.
+- **service**: Service account token. Single account only, no connect vars allowed.
+
+### Common Mistakes
+
+| Mistake | Fix |
+|---------|-----|
+| Using UUID instead of Secret Reference | Prefer `op://vault/item/field` with `onepasswordRead` — UUIDs are opaque and break on vault migration |
+| `onepasswordDocument` in connect/service mode | Not available — use account mode or store docs differently |
+| Token not set — apply fails silently | Run `eval $(op signin)` or set `OP_SERVICE_ACCOUNT_TOKEN` before `chezmoi apply` |
+
 ## Common Mistakes
 
 | Mistake | Fix |
