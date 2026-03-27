@@ -1,0 +1,31 @@
+[credential]
+  helper = store
+[credential "https://github.com"]
+  helper =
+  helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+  helper =
+  helper = !gh auth git-credential
+
+[user]
+  name = Noa Virellia
+  email = noa@requiem.garden
+  signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOOz0CMmkGSXv4H77rmrmvadltAlwAZeVimxGoUAfArs Noa Virellia
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = {{ if eq .chezmoi.os "darwin" }}"/Applications/1Password.app/Contents/MacOS/op-ssh-sign"{{ else }}"/opt/1Password/op-ssh-sign"{{ end }}
+
+[init]
+  defaultBranch = main
+
+[pull]
+  rebase = true
+
+[push]
+  autoSetupRemote = true
+
+[commit]
+  gpgsign = true

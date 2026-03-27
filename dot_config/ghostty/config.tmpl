@@ -1,9 +1,11 @@
 font-family = FiraCode Nerd Font Ret
 font-style = Retina
-font-size = 11
+font-size = {{ if eq .chezmoi.os "darwin" }}13{{ else }}11{{ end }}
 mouse-hide-while-typing = true
 cursor-style = bar
 cursor-style-blink = false
 shell-integration-features = no-cursor,ssh-terminfo,ssh-env
 adjust-cursor-thickness = 2
 adjust-cell-height = 1
+command = {{ if eq .chezmoi.os "darwin" }}/opt/homebrew/bin/fish{{ else }}/usr/bin/fish{{ end }} --login --interactive
+theme = Catppuccin Mocha
