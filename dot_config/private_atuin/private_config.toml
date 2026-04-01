@@ -2,14 +2,12 @@ auto_sync = false
 style = "compact"
 prefers_reduced_motion = true
 enter_accept = true
-search_mode = "daemon-fuzzy"
 
 [sync]
 records = true
 
 [daemon]
-enabled = true
-autostart = true
+enabled = false
 
 [ai]
 enabled = false
