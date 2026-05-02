@@ -1,0 +1,145 @@
+{
+  "cli_default_open_behavior": "new_window",
+  "auto_install_extensions": {
+    "astro": true,
+    "html": true,
+    "just": true,
+    "nix": true,
+    "svelte": true,
+    "rose-pine-theme": true,
+    "biome": true,
+    "terraform": true,
+    "emmet": true,
+  },
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "buffer_font_size": 14.0,
+  "ui_font_size": 15.0,
+  "colorize_brackets": true,
+  "cursor_blink": false,
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "soft_wrap": "editor_width",
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+  "languages": {
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.addMissingImports.ts": true,
+        "source.fixAll.eslint": true,
+        "source.fixAll.ts": true,
+        "source.removeUnusedImports.ts": true,
+      },
+      "language_servers": ["typescript-language-server", "!vtsls", "..."],
+    },
+    "Nix": {
+      "formatter": {
+        "external": {
+          "command": "nixfmt",
+        },
+      },
+      "language_servers": ["nixd", "!nil", "..."],
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.addMissingImports.ts": true,
+        "source.fixAll.eslint": true,
+        "source.fixAll.ts": true,
+        "source.removeUnusedImports.ts": true,
+      },
+      "language_servers": ["typescript-language-server", "!vtsls", "..."],
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.addMissingImports.ts": true,
+        "source.fixAll.eslint": true,
+        "source.fixAll.ts": true,
+        "source.removeUnusedImports.ts": true,
+      },
+      "language_servers": ["typescript-language-server", "!vtsls", "..."],
+    },
+  },
+  "load_direnv": "shell_hook",
+  "lsp": {
+    "json-language-server": {
+      "settings": {
+        "json": {
+          "schemas": [
+            {
+              "fileMatch": ["package.json"],
+              "url": "https://www.schemastore.org/package",
+            },
+          ],
+        },
+      },
+    },
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "schemaStore": {
+            "enable": true,
+          },
+          "completion": true,
+        },
+      },
+    },
+    "biome": {
+      "settings": {
+        "require_config_file": true,
+      },
+    },
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "rounded_selection": false,
+  "status_bar": {
+    "active_language_button": false,
+    "cursor_position_button": false,
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false,
+  },
+  "tabs": {
+    "git_status": true,
+    "show_diagnostics": "errors",
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "terminal": {
+    "cursor_shape": "bar",
+    "shell": {
+      "program": "fish",
+    },
+    "scrollbar": {
+      "show": "never",
+    },
+  },
+  "theme": {
+    "dark": "Rosé Pine Moon",
+    "light": "Rosé Pine Dawn",
+    "mode": "dark",
+  },
+  "title_bar": {
+    "show_user_picture": false,
+  },
+  "toolbar": {
+    "quick_actions": false,
+  },
+  "ui_font_family": "FiraCode Nerd Font Mono",
+  "vim": {
+    "use_system_clipboard": "on_yank",
+  },
+  "vim_mode": true,
+  "which_key": {
+    "enabled": true,
+  },
+}
