@@ -4,6 +4,7 @@ starship init fish | source
 zoxide init fish | source
 atuin init fish --disable-up-arrow | source
 direnv hook fish | source
+devenv hook fish | source
 
 fish_add_path ~/.local/bin
 
