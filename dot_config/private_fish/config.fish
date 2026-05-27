@@ -26,4 +26,6 @@ function y
   command rm -f -- "$tmp"
 end
 
+set -x EDITOR "nvim"
+
 set -x SSH_AUTH_SOCK "~/.1password/agent.sock"
