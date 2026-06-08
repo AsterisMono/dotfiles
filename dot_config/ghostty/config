@@ -9,3 +9,5 @@ adjust-cursor-thickness = 2
 adjust-cell-height = 3
 command = /usr/bin/fish --login --interactive
 theme = Catppuccin Mocha
+gtk-titlebar = false
+background-opacity = 0.95
