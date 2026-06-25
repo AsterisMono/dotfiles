@@ -1,4 +1,8 @@
 {
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware",
+  },
   "cli_default_open_behavior": "new_window",
   "auto_install_extensions": {
     "astro": true,
