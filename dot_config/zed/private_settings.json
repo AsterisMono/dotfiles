@@ -1,4 +1,18 @@
 {
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "effort": "xhigh",
+        "model": "sonnet"
+      },
+      "type": "registry"
+    }
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware",
