@@ -82,7 +82,7 @@
       "language_servers": ["typescript-language-server", "!vtsls", "..."],
     },
   },
-  "load_direnv": "shell_hook",
+  "load_direnv": "direct",
   "lsp": {
     "json-language-server": {
       "settings": {
