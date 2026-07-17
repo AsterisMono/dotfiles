@@ -1,4 +1,12 @@
 {
+  "edit_predictions": {
+    "open_ai_compatible_api": {
+      "prompt_format": "zeta2",
+      "model": "zed-industries_zeta-2",
+      "api_url": "http://127.0.0.1:1234/v1/completions"
+    },
+    "provider": "open_ai_compatible_api"
+  },
   "agent_servers": {
     "claude-acp": {
       "default_config_options": {
