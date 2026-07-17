@@ -29,9 +29,9 @@
     "terraform": true,
     "emmet": true,
   },
-  "buffer_font_family": "FiraCode Nerd Font Mono",
-  "buffer_font_size": 14.0,
-  "ui_font_size": 15.0,
+  "buffer_font_family": "Maple Mono Normal NL",
+  "buffer_font_size": 15.0,
+  "ui_font_size": 16.0,
   "colorize_brackets": true,
   "cursor_blink": false,
   "diagnostics": {
@@ -152,7 +152,7 @@
   "toolbar": {
     "quick_actions": false,
   },
-  "ui_font_family": "FiraCode Nerd Font Mono",
+  "ui_font_family": "Maple Mono Normal NL",
   "vim": {
     "use_system_clipboard": "on_yank",
   },
