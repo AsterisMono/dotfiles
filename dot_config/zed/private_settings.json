@@ -8,15 +8,35 @@
     "provider": "open_ai_compatible_api"
   },
   "agent_servers": {
+    "codex-acp": {
+      "default_config_options": {
+        "mode": "agent-full-access",
+        "reasoning_effort": "high"
+      },
+      "type": "registry"
+    },
     "claude-acp": {
       "default_config_options": {
+        "mode": "bypassPermissions",
         "effort": "xhigh",
-        "model": "sonnet"
+        "model": "claude-fable-5[1m]"
       },
       "type": "registry"
     }
   },
   "agent": {
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "default": "allow"
+        }
+      }
+    },
+    "default_model": {
+      "provider": "openrouter",
+      "model": "anthropic/claude-fable-5",
+      "enable_thinking": true
+    },
     "dock": "right",
     "favorite_models": [],
     "model_parameters": []
